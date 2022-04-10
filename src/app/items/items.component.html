@@ -1,0 +1,45 @@
+    <table class="table table-hover">
+      <thead class="table-info">
+        <tr class="table-secondary">
+          <th scope="col" >Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Active</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let item of items | paginate: { itemsPerPage: count, currentPage: p}
+          "
+        >
+          <th scope="row">{{ item.id }}</th>
+          <td>{{ item.name }}</td>
+          <td>{{ item.description }}</td>
+          <td>{{ item.active }}</td>
+          <td>
+            <i
+              class="fa fa-trash"
+              (click)="deleteItem(item)"
+              aria-hidden="true"
+            ></i>
+            &nbsp;
+            <i
+              class="fa fa-edit"
+              (click)="updateItem(item)"
+              aria-hidden="true"
+            ></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+     <!--Including the pagination control.-->
+  <div class="text-right ">
+    <pagination-controls (pageChange)="p = $event" ></pagination-controls>
+  </div>
+  
+    <button class="btn btn-dark" (click)="addItem()">
+      Add Item
+    </button>
+  

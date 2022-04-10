@@ -1,0 +1,31 @@
+<div class="modal-header " >
+  <mat-label><h3>Add Item</h3></mat-label>
+  <button
+    type="button"
+    class="close"
+    aria-label="Close"
+    (click)="activeModal.dismiss()"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body container">
+  <form class="update-form">
+    <mat-form-field class="update-full-width" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput name="name" [(ngModel)]="item.name" />
+    </mat-form-field>
+    <mat-form-field class="update-full-width" appearance="fill">
+      <mat-label>Description</mat-label>
+      <input matInput name="description" [(ngModel)]="item.description" />
+    </mat-form-field>
+    <mat-form-field class="update-full-width" appearance="fill">
+      <mat-label>Active</mat-label>
+      <input matInput name="active" [(ngModel)]="item.active" />
+    </mat-form-field>
+  </form>
+  <button class="btn btn-info" (click)="addItem(item)">Add</button>
+</div>
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" 
+type = "line-scale" [fullScreen] = "true"><p style="color: white" > Loading... </p>
+</ngx-spinner>

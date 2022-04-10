@@ -1,0 +1,33 @@
+<div class="modal-header">
+    <mat-label><h3>Update Item</h3></mat-label>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="activeModal.dismiss()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+  <div class="modal-body container">
+    <form class="update-form">
+      <mat-form-field class="update-full-width" appearance="fill">
+        <mat-label>Id</mat-label>
+        <input matInput name="id" [(ngModel)]="item.id" />
+      </mat-form-field>
+      <mat-form-field class="update-full-width" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput name="name" [(ngModel)]="item.name" />
+      </mat-form-field>
+      <mat-form-field class="update-full-width" appearance="fill">
+        <mat-label>Description</mat-label>
+        <input matInput name="description" [(ngModel)]="item.description" />
+      </mat-form-field>
+      <mat-form-field class="update-full-width" appearance="fill">
+        <mat-label>Active</mat-label>
+        <input matInput name="active" [(ngModel)]="item.active" />
+      </mat-form-field>
+    </form>
+    <button class="btn btn-info" (click)="updateItem(item)">Update</button>
+  </div>
+  
